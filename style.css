@@ -1,0 +1,484 @@
+/* Styles from the first HTML file */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.side-menu-container {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.side-menu-button {
+  font-size: 25px;
+   border-radius: 50%;
+  background-color: #3e5518;
+  color: white;
+  padding: 20px 25px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.side-menu {
+  position: absolute;
+  top: calc(100% - 250px);
+  right: 0;
+  width: 250px;
+  background-color: #3e5518;
+  color: #fff;
+  display: none;
+  padding: 20px;
+}
+
+.side-menu2 {
+  position: absolute;
+  top: calc(100% - 125px);
+  right: 0;
+  width: 250px;
+  background-color: #3e5518;
+  color: #fff;
+  display: none;
+  padding: 20px;
+}
+
+.side-menu.open {
+  display: block;
+}
+
+.side-menu2.open2 {
+  display: block;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-menu-button {
+  background-color: #3e5518;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+#login{
+  color: #d7b543;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#login:hover{
+  color: black;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+
+/* header .logo {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+} */
+
+#menu-logo img{
+  width: 240px;
+  height: 90px;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+header ul li a {
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s, font-size 0.5s;
+}
+
+header ul li a:hover,
+header ul li a.active {
+  background: #d7b543;
+  color: #3e5518;
+  font-size: 20px;
+  transition: background 0.3s, color 0.3s, font-size 0.3s;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to top, #3e5518, transparent);
+  z-index: 1000;
+}
+
+section img.bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+section img#moon {
+  mix-blend-mode: screen;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%; /* Use percentage instead of fixed pixel value */
+   height: 100%; /* Use percentage instead of fixed pixel value */
+   object-fit: cover;
+}
+
+#mountains_front2{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%; /* Use percentage instead of fixed pixel value */
+   height: 100%; /* Use percentage instead of fixed pixel value */
+   object-fit: cover;
+  z-index: 20;
+}
+
+#mountains_front {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%; /* Use percentage instead of fixed pixel value */
+   height: 100%; /* Use percentage instead of fixed pixel value */
+  z-index: 30;
+}
+
+#moving {
+  position: absolute;
+  left: 18%;
+  width: 300px;
+  height: 300px;
+  z-index: 28;
+  transform: translateY(18vh);
+}
+
+#para {
+  position: relative;
+  background-color: #3e5518;
+  color: antiquewhite;
+  padding: 50px;
+}
+
+#para h2 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  color: #7597de;
+}
+
+/*Styles for stop motion*/
+.stop-motion-images{
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-bottom: 150px;
+  display: flex;
+  position: sticky;
+  width: 300px;
+  height: 300px;
+  top: 200px;
+}
+
+#stop-motion-section{
+  background-color: white;
+}
+
+.stop-motion-text{
+  display: flex;
+  flex-direction: column;
+  padding-right: 70px;
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepageicons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 300px;
+  margin-bottom: 5%;
+}
+
+#eventimg{
+  transition: ease-in 0.2s;
+}
+
+#eventimg:hover{ 
+  transform: scale(1.1);
+}
+
+#text{
+  margin-top: 50px;
+  justify-content: baseline;
+  align-self: flex-start;
+}
+
+
+
+@media screen and (max-width: 992px) {
+
+  #menu-logo img{
+    width: 120px;
+    height: 45px;
+  }
+  /* Adjust styles for smaller screens */
+  #menu{
+    position: sticky;
+    padding: 20px;
+  }
+
+  #menu-logo{
+    font-size: 1.5em;
+  }
+
+  .nav li{
+    display: none;
+  }
+
+  .nav.active li{
+    display: flex;
+    margin-left: 0;
+  }
+
+  .nav.active li a{
+    font-size: 1.2em;
+    margin: 5px 0;
+    display: inline-block;
+  }
+
+  .nav.active{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.87);
+  }
+  
+
+  .toggle{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 35px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: url(img/menu.png);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 11000;
+  }
+
+  .toggle.active{
+    background: url(img/close.png);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  #moving {
+     left: 10%; /* Adjust positioning for smaller screens */
+     /* transform: translateY(19vh); */
+  }
+
+  #para{
+    padding: 20px;
+  }
+
+  #stop-motion-section {
+    position: absolute; /* Set to relative to allow stacking */
+    z-index: 1; /* Set a higher z-index than default (usually 0) to place it behind other elements */
+  }
+
+  .stop-motion-text{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .stop-motion-images{
+    display: none;
+  }
+
+  #eventimg{
+    width: 200px;
+    height: 200px;
+  }
+
+
+
+}
+
+/* back button */
+.backbtn {
+  
+  font-weight: 700;
+  background-color: #3e5518;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+.backbtn:hover{
+  background-color: #577823;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #3e5518;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  color: #f0f0f0;
+}
+
+/* Icon styles */
+.footer i {
+  font-size: 24px;
+  margin: 0 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer i:hover {
+  transform: scale(1.2);
+}
+
+/*************footer End*****************/
+
+
+/* Styles from the second HTML file */
+/* html {
+  height: 1.618;
+}
+
+
+.bg {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.section {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+.section > * {
+  width: 50%;
+}
+
+.section-img {
+  position: relative;
+  display: flex;
+}
+
+.section-img-inner {
+  height: 100vh;
+  position: fixed;
+  left: 5%;
+  width: 40%;
+  top: 0;
+  mix-blend-mode: multiply;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  filter: blur(30px);
+  opacity: 0;
+  background-position: 50% 40%;
+  transition: .6s ease, opacity .6s ease, background-position .8s ease;
+}
+
+.section-body {
+  display: flex;
+  align-items: center;
+}
+
+.section-text {
+  padding: 5vw;
+}
+
+.section.active .section-img-inner {
+  opacity: 1;
+  background-position: 50% 50%;
+  filter: blur(0);
+}
+
+h2 {
+  font-size: 3vw;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+} */

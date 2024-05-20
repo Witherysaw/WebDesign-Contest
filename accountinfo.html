@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account Information</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/3a35172c8d.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    .card {
+      color: black;
+      background-color: #d7b543;
+      font-size: 30px;
+      margin-top: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    }
+    .info {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+    .infoicon {
+      width: 50px;
+      height: 50px;
+      margin-top: 20px;
+    }
+    .infobtn>button {
+      margin-right: 173px;
+      margin-left: 173px;
+      width: 300px;
+      height: 100px;
+    }
+    .profile{
+      align-items: center;
+      margin: auto;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: solid 5px gray;
+    }
+    #pfp{
+
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+    <header id="menu" style="background-color: #3e5518;">
+        <a href="#" class="logo" id="menu-logo"> <img src="img/logo2.png" alt=""> </a>
+        <div class="toggle"></div>
+        <ul class="nav">
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li id=""><a href="#" class="active">Account</a></li>
+          <!-- <li><a href="login.html" class="menuitem2" id="Signuplink">Login</a></li> -->
+        </ul>
+      </header>
+  <button class="backbtn" onclick="goBack(1)"> <i class="fas fa-arrow-left"></i> Back</button>
+  <div class="container">
+    <div class="card row">
+      <h2 class="card-header col-12">Account Information</h2>
+      <div class="row profile">
+        <img id="pfp" src="img/emptypfp.png">
+      </div>
+      <div class="info row center">
+        <i class="fas fa-user infoicon col-1"></i>
+        <span class="info col-2">Full Name:</span>
+        <span class="info col-6">John Doe</span>
+      </div>
+      <div class="info row center">
+        <i class="fas fa-envelope infoicon col-1"></i>
+        <span class="info col-2">Email:</span>
+        <span class="info col-6">johndoe@example.com</span>
+      </div>
+      <div class="info row center">
+        <i class="fas fa-lock infoicon col-1"></i>
+        <span class="info col-2">Password:</span>
+        <span class="info col-6">********</span>
+      </div>
+      <div class="infobtn row">
+        <button type="submit" class="col-6" id="logout"><i class="fas fa-sign-out"></i> Log Out</button>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>© Copyright 2024 Educate - All Rights Reserved</p>
+    <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-viber"></i></a>
+    </div>
+</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  <script type="text/javascript">
+    window.addEventListener("load", checkLoginStatus);
+
+    document.getElementById("logout").addEventListener("click", function(event) {
+      event.preventDefault();
+
+
+      // Update login status in localStorage
+      localStorage.setItem("loggedIn", "false");
+
+      // Redirect back to the previous page
+      window.history.back();
+    });
+
+  </script>
+</body>
+</html>

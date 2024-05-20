@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/405ea5f10a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    *{
+        font-family: sans-serif;
+        transition: 1s;
+    }
+    a {
+      text-decoration: none;
+    }
+    label {
+      font-family: "Raleway", sans-serif;
+      font-size: 11pt;
+    }
+    #forgot-pass {
+      color: #3e5518;
+      font-family: "Raleway", sans-serif;
+      font-size: 10pt;
+      margin-top: 3px;
+      text-align: right;
+    }
+    #login {
+      background: #fbfbfb;
+      border-radius: 8px 0px 0px 8px;
+      box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+      height: 390px;
+      width: 354px;
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      justify-content: center;
+      overflow: hidden;
+    }
+    #card-content {
+      width: 73%;
+      height: 100%;
+      padding: 12px 44px;
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      justify-content: center;
+      margin: auto;
+    }
+    #card-title {
+      font-family: "Raleway Thin", sans-serif;
+      letter-spacing: 4px;
+      text-align: center;
+      position: absolute;
+      left: 125px;
+    }
+    .t1{
+      top: 35px;
+    }
+    .t2{
+      top: 20px;
+    }
+    h2{
+      margin-top: 0;
+    }
+    #signup {
+      color: #3e5518;
+      font-family: "Raleway", sans-serif;
+      font-size: 10pt;
+      margin-top: 16px;
+      text-align: center;
+    }
+    .submit-btn {
+      background: #3e5518;
+      border: none;
+      border-radius: 21px;
+      /* box-shadow: 0px 1px 8px #3e5518; */
+      cursor: pointer;
+      color: white;
+      font-family: "Raleway SemiBold", sans-serif;
+      height: 42.3px;
+      margin: 0 auto;
+      margin-top: 50px;
+      width: 153px;
+      padding-left: 4px;
+      font-size: 15px;
+    }
+    .form {
+      align-items: left;
+      display: flex;
+      flex-direction: column;
+      padding-top: 50px;
+    }
+    .form-border {
+      background: #3e5518;
+      height: 1px;
+      width: 100%;
+    }
+    .form-content {
+      background: #fbfbfb;
+      border: none;
+      outline: none;
+      padding-top: 14px;
+    }
+    .underline-title {
+      background: #3e5518;
+      height: 1px;
+      margin: -1.1rem auto 0 auto;
+      width: 89px;
+    }
+    .contain{
+        display: flex;
+        /* background-color: slateblue; */
+        width: 544px;
+        height: 390px;
+        perspective: 1000px;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .signin{
+        background-color: #3e5518;
+        padding: 0px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        width: 190px;
+        border-radius: 0px 8px 8px 0px;
+        /* margin: auto; */
+    }
+    .logintext{
+        color: white;
+        font-size: 14px;
+        /* margin: auto; */
+    }
+    .signinbtn{
+        font-size: 13px;
+        background-color: #d7b543;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        border-radius: 21px;
+        cursor: pointer;
+        /* color: white; */
+    }
+    .card-front{
+      display: flex;
+    }
+    .card-inner{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .card-front, .card-back{
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; 
+      backface-visibility: hidden;
+      position: absolute;
+    }
+    .card-back{
+      display: flex;
+      transform: rotateY(180deg);
+    }
+    .flipped {
+      transform: rotateY(180deg);
+    }
+    .back-content{
+      position: relative;
+      margin: 13px;
+    }
+    .space{
+      margin: 0px 44px;
+      position: absolute;
+      width: 240px;
+      transition: 1s;
+      /* left: 300px; */
+      bottom: 50px;
+    }
+    .hide{
+      /* display: none; */
+      right: 350px;
+      z-index: -1;
+    }
+    .unhide{
+      right: 200px;
+      
+    }
+    .hiding{
+      display: none;
+    }
+    .left{
+      left: 0px;
+    }
+    .right{
+      /* display: none; */
+      left: 350px;
+      z-index: -1;
+    }
+    .try{
+      overflow-x: hidden;
+    }
+</style>
+<body>
+    <div class="contain">
+      <div class="card-inner">
+        <div class="card-front">
+          <div id="login">
+            <div id="card-content">
+              <div id="card-title" class="t1">
+                <h2>LOGIN</h2>
+                <div class="underline-title"></div>
+              </div>
+              <form method="post" class="form" id="signInForm">
+                <label for="user-email" style="padding-top:13px">
+                    &nbsp;Email
+                  </label>
+                <input id="user-email" class="form-content" type="email" name="email" autocomplete="on" required />
+                <div class="form-border"></div>
+                <label for="user-password" style="padding-top:22px">&nbsp;Password
+                  </label>
+                <input id="user-password" class="form-content" type="password" name="password" required />
+                <div class="form-border"></div>
+                <a href="#">
+                  <legend id="forgot-pass">Forgot password?</legend>
+                </a>
+                <input id="loginbtn" class="submit-btn" type="submit" name="submit" value="LOGIN" />
+              </form>
+            </div>
+         </div>
+  
+        <div class="signin">
+            <div class="logintext">Don't have an account?</div>
+            <div class="signinbtn" id="signin-btn">SIGNUP</div>
+        </div>
+      </div>
+  
+      <div class="card-back">
+        <div id="login" class="try">
+          <div id="card-content back-content">
+            <div id="card-title" class="t2">
+              <h2>SIGNUP</h2>
+              <div class="underline-title"></div>
+            </div>
+            <!-- Email and pw -->
+            <form method="post" class="form" id="signupForm">
+             <div class="form space left" id="1">
+              <!-- Email -->
+              <label for="user-email" style="padding-top:13px">
+                &nbsp;Email
+              </label>
+              <input id="user-email" class="form-content" type="email" name="email" autocomplete="on" required />
+              <div class="form-border"></div>
+
+              <!-- Password -->
+              <label for="user-password" style="padding-top:22px">&nbsp;Password
+                </label>
+              <input id="user-password" class="form-content" type="password" name="password" required />
+              <div class="form-border"></div>
+
+              <!-- Confirm password -->
+              <label for="user-password" style="padding-top:22px">&nbsp;Confirm Password
+              </label>
+              <input id="user-password" class="form-content" type="password" name="password" required />
+              <div class="form-border"></div>
+              <input id="sign" type="submit" name="submit" value="CONTINUE" class="submit-btn btn" style="margin-top: 30px;"/>
+             </div>
+              
+
+             <div class="form space hide hiding" id="2">
+              <!-- Address -->
+              <label for="user-email" style="padding-top:13px">
+                &nbsp;Address
+              </label>
+              <input id="user-email" class="form-content" type="text" name="email" autocomplete="on" required />
+              <div class="form-border"></div>
+
+              <!-- Country -->
+              <label for="user-password" style="padding-top:22px">&nbsp;Country
+                </label>
+              <input id="user-password" class="form-content" type="text" name="password" required />
+              <div class="form-border"></div>
+
+              <!-- Age -->
+              <label for="user-password" style="padding-top:22px">&nbsp;Age
+              </label>
+              <input id="user-password" class="form-content" type="number"  min="0" rname="password" required />
+              <div class="form-border"></div>
+              <input type="submit" name="submit" value="SIGN UP" class="submit-btn btn" style="margin-top: 30px;"/>
+             </div>
+            </form>
+
+          </div>
+       </div>
+
+      <div class="signin">
+          <div class="logintext">Already have an account?</div>
+          <div class="signinbtn" id="login-btn">LOGIN</div>
+      </div>
+      </div>
+      </div>
+    </div>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      // Get the elements
+      var signInButton = document.getElementById("signin-btn");
+      var logInButton = document.getElementById("login-btn");
+      var cardInner = document.querySelector(".card-inner");
+      var signButton = document.getElementById("sign");
+      var mailpw = document.getElementById("1");
+      var info = document.getElementById("2");
+
+      // Add click event listener to the "Sign In" button
+      signInButton.addEventListener("click", function() {
+          // Toggle the card flip by adding/removing a class
+          cardInner.classList.toggle("flipped");
+
+          setTimeout(function() {
+            // unhide the personal information
+            info.classList.remove("hiding");
+          }, 1000);
+      });
+
+      logInButton.addEventListener("click", function() {
+          // Toggle the card flip by adding/removing a class
+          cardInner.classList.toggle("flipped");
+
+          setTimeout(function() {
+            // unhide the personal information
+            info.classList.add("hiding");
+          }, 1000);
+      });
+
+      signButton.addEventListener("click", function() {
+          // Toggle the card flip by adding/removing a class
+          mailpw.classList.remove("left");
+          mailpw.classList.add("right");
+          info.classList.remove("hide");
+          info.classList.add("unhide");
+
+          setTimeout(function() {
+            // unhide the personal information
+            mailpw.classList.add("hiding");
+          }, 1000);
+      });
+  });
+
+  function toggleForm() {
+      var signInContainer = document.getElementById("signInContainer");
+      var signUpContainer = document.getElementById("signUpContainer");
+      var signinbackbtn = document.getElementById("signinbackbtn");
+      var signupbackbtn = document.getElementById("signupbackbtn");
+
+      signInContainer.classList.toggle("hidden");
+      signUpContainer.classList.toggle("hidden");
+      signinbackbtn.classList.toggle("hidden");
+      signupbackbtn.classList.toggle("hidden");
+    }
+
+    document.getElementById("signInForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Perform sign-in logic here
+
+      // Update login status and redirect back two pages
+      
+
+      // Show success message
+      alert("Successfully logged in!");
+
+      // Clear form fields
+      this.reset();
+
+      handleLogin();
+
+      // Redirect back two pages
+      window.history.go(-1);
+    });
+
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // // Validate the form fields
+      // if (username === "" || email === "" || password === "" || confirmPassword === "") {
+      //   alert("Please fill in all the required fields.");
+      //   return;
+      // }
+
+      // if (password !== confirmPassword) {
+      //   alert("Password and Confirm Password do not match.");
+      //   return;
+      // }
+      alert("Successfully signed up!");
+    
+      // Update login status and redirect back two pages
+      console.log("works");
+      handleLogin();
+
+      console.log("works");
+      // location.href = "./index.html";
+      window.history.go(-1);
+
+      // Show success message
+      
+      
+      // Clear form fields
+
+      
+
+      // Redirect back two pages
+     
+    });
+
+    window.addEventListener("load", checkLoginStatus);
+</script>
+</html>

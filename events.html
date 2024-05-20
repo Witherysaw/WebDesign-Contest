@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <title>Events</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/3a35172c8d.js" crossorigin="anonymous"></script>
+    <style>
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        /* background: linear-gradient(#8ad4d2, white); */
+        background-color: whitesmoke;
+      }
+      #menu{
+        background-color: #3e5518;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+      #title{
+        margin: 20px 70px;
+        padding: 10px;
+        font-size: 3em;
+      }
+
+      #ongoingevent{
+        background-color: #3e5518;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+      }
+      .text-end{
+        padding: 0px;
+      }
+      #eventtext{
+        color: white;
+        padding: 15px 25px;
+        text-align: justify;
+      }
+
+      #eventtextmiddle{
+        height: 100px;
+      }
+      
+      #historyimg{
+        border-radius: 20px;
+      }
+
+      #historyback{
+        border-radius: 20px;
+      }
+
+
+      .btn-primary{
+        color: #3e5518;
+        font-weight: 600;
+        font-size: large;
+        background-color: #d7b543;
+        border-color: #f6ce4c;
+        margin-right: 15px;
+      }
+
+      .btn-primary:hover{
+        color: black;
+        background-color: #ebc64c;
+      }
+
+
+    /* Custom CSS for square images */
+    .square-image {
+      width: 300px;
+      height: 300px;
+      padding-bottom: 100%;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 100px; /* Adjust the margin as needed */
+    }
+
+    /* Flip card styles */
+    .flip-card {
+      background-color: transparent;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #f1f1f1;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 20vw;
+      height: 20vw;
+      text-align: center;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-back {
+      padding: 20px 20px;
+      background-color: #3e5518;
+      color: white;
+      transform: rotateY(180deg);
+    }
+    #historyimg{
+        transition: ease-in 0.2s;
+    }
+
+    #historyimg:hover{
+        transform: scale(1.1);
+    }
+
+    
+
+    /* Custom CSS for image shadow */
+    .img-with-shadow {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #history{
+        margin-bottom: 200px;
+    }
+
+    /* Style for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+  font-size: 1.5em;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  color: #3e5518;
+}
+
+#eventtitle{
+  text-align: center;
+  color: #3e5518;
+  font-weight: bolder;
+}
+
+.mt-3{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-lg{
+  background-color: #d7b543;
+  border-color: #f6ce4c;
+  font-weight: 600;
+}
+.btn-lg:hover{
+  background-color: #b89b3b;
+  border-color: #d7b543;
+  color: black;
+}
+
+/* Style for the close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#participationConfirmationModal{
+  text-align: center;
+}
+
+      @media screen and (max-width: 992px) {
+
+        #title{
+            margin: 10px 10px;
+        }
+        .text-end{
+            padding: 3%;
+            align-items: center;
+            justify-content: center;
+        }
+        #eventtext{
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #ongoingevent{
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+
+        
+        
+        .square-image {
+          width: 180px;
+          height: 180px;
+        }
+        .flip-card {
+          width: 180px;
+          height: 180px;
+        }
+
+        .flip-card-inner {
+          position: relative;
+          width: 180px;
+          height: 180px;
+          text-align: center;
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+        }
+        .flip-card-front, .flip-card-back {
+          position: absolute;
+          width: 180px;
+          height: 180px;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+        }
+
+        .modal-content {
+          font-size: 1em;
+          background-color: #fefefe;
+          margin: 15% auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%; 
+          color: #3e5518;
+        }
+
+        #ConfirmationModal{
+          margin-top: 30vh;
+        }
+
+        #myModall{
+          margin-top: 20vh;
+        }
+
+        #title{
+          text-align: center;
+        }
+
+        #history{
+          margin-bottom: 100px;
+        }
+
+        .col-md-4.order-md-2.text-end {
+          margin-left: -15px;
+        }
+
+      }
+    </style>
+</head>
+<body>
+    <header id="menu">
+      <a href="#" class="logo" id="menu-logo"> <img src="img/logo2.png" alt=""> </a>
+        <div class="toggle"></div>
+        <ul class="nav">
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="events.html" class="active">Events</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li id="Signuplink"></li>
+          <!-- <li><a href="login.html" class="menuitem2" id="Signuplink">Login</a></li> -->
+        </ul>
+    </header>
+    <h2 id="title">
+        Events
+    </h2>
+    <div class="container" id="ongoingevent">
+        <div class="row">
+          <!-- Image Column (Right on Desktop, Top on Mobile) -->
+          <div class="col-md-4 order-md-2 text-end" id="imageContainer">
+            <img src="img/monywa.jpg" class="img-fluid" alt="Responsive Image" style="height: 100%;">
+          </div>
+      
+          <!-- Paragraph Column -->
+          <div class="col-md-8 order-md-1" id="eventtext">
+            <h3>Educating basic-middle school students in Monywa</h3>
+            <p id="eventtextmiddle">
+              we will be teaching students within the age of 5-12. Subjects include Maths, English, and Science. For this trip, we will gather at Timescity at 4 am, 21/February/2022. The buses will leave at 5 am; therefore, please do not be late.
+            </p>
+      
+            <!-- Read More Button (Desktop View) -->
+            <button type="button" class="btn btn-primary d-md-inline" id="readMoreBtn">Read More</button>
+            <button type="button" class="btn btn-primary d-md-inline" id="donateButton">Donate</button>
+          </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content" id="myModall">
+        <!-- Close button on the right side -->
+        <span class="close float-right">&times;</span>
+        
+        <!-- Event details -->
+        <h2 id="eventtitle">Event Details</h2>
+        <br>
+        <p>Date & Time: <b>22/February/2024 9 am</b></p>
+        <br>
+        <p>Location: <b>Tha Pyay Khin Village, Monywa City, Sagaing Region</b></p>
+        <br>
+        <p>Description: In this event, we will be teaching students within the age of 5-12. Subjects include Maths, English, and Science. For this trip, we will gather at Timescity at 4 am, 21/February/2022. The buses will leave at 5 am; therefore, please do not be late.</p>
+        
+        <!-- Buttons using Bootstrap columns -->
+        <div class="row mt-3">
+          <div class="col">
+            <button type="button" class="btn btn-block btn-lg text-center" id="participateButton">Participate</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-block btn-lg text-center" id="donateButton2">Donate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="participationConfirmationModal" class="modal">
+      <div class="modal-content" id="ConfirmationModal">
+          <!-- Participation confirmation details -->
+          <h2 id="confirmationTitle">Participation Confirmation</h2>
+          <br>
+          <p>By Clicking Confirm you agreed to the terms and condition of volunteering in the event.</p>
+
+          <!-- Confirm and Cancel buttons -->
+          <div class="row mt-3">
+              <div class="col">
+                  <button type="button" class="btn btn-block btn-lg text-center" id="confirmButton">Confirm</button>
+              </div>
+              <div class="col">
+                  <button type="button" class="btn btn-block btn-lg text-center" id="cancelButton">Cancel</button>
+              </div>
+          </div>
+      </div>
+  </div>
+    
+
+    <h2 id="title">
+        History
+    </h2>
+    <div class="container mt-5" id="history">
+        <div class="row row-cols-2 row-cols-md-4 g-4">
+          <!-- Image 1 -->
+          <div class="col">
+            <a href="history.html?post=0">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front square-image img-with-shadow">
+                    <img src="img/history1.jpg" class="img-fluid" alt="Image 1" id="historyimg">
+                  </div>
+                  <div class="flip-card-back" id="historyback">
+                    <p>Date: 18/06/2021 <br><br><br><br>Location: Tha Pyay Gone Village <br><br><br><br>Mission: Fixing the school building</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Image 2 -->
+          <div class="col">
+            <a href="history.html?post=1">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front square-image img-with-shadow">
+                    <img src="img/history2.jpg" class="img-fluid" alt="Image 2" id="historyimg">
+                  </div>
+                  <div class="flip-card-back" id="historyback">
+                    <p>Date: 12/04/2021 <br><br><br><br>Location: Kone Pyin Gyi Village <br><br><br><br>Mission: Building a community library</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Image 3 -->
+          <div class="col">
+            <a href="history.html?post=2">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front square-image img-with-shadow">
+                    <img src="img/history3.jpg" class="img-fluid" alt="Image 1" id="historyimg">
+                  </div>
+                  <div class="flip-card-back" id="historyback">
+                    <p>Date: 22/08/2019 <br><br><br><br>Location: Kyone Tine Village <br><br><br><br>Mission: 3 month teaching the basic education students</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Image 4 -->
+          <div class="col">
+            <a href="history.html?post=3">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front square-image img-with-shadow">
+                    <img src="img/history4.jpg" class="img-fluid" alt="Image 1" id="historyimg">
+                  </div>
+                  <div class="flip-card-back" id="historyback">
+                    <p>Date: 22/04/2019 <br><br><br><br>Location: Kyone Tine Village <br><br><br><br>Mission: 3 month teaching the middle education students</p>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side-menu-container" id="sidemenu">
+      <!-- <button class="side-menu-button" onclick="toggleSideMenu2()"><i class="fas fa-user"></i></button> -->
+      <!-- <div class="side-menu2">
+        <a href="loginsignup.html" ><button class="close-menu-button" id="loginButton" onclick="handleLogin()">Login</button></a>
+        <button class="close-menu-button" onclick="toggleSideMenu2()">Close Menu</button>
+      </div> -->
+    </div>  
+    <footer class="footer">
+      <p>© Copyright 2024 Educate - All Rights Reserved</p>
+      <div class="social-icons">
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-viber"></i></a>
+      </div>
+  </footer>
+    <script src="historycontent.js"></script>
+    <script>
+        
+        // Get the modal and the button
+var modal = document.getElementById('myModal');
+var btn = document.getElementById('readMoreBtn');
+var closeBtn = document.getElementsByClassName('close')[0];
+
+// When the button is clicked, show the modal
+btn.onclick = function () {
+  modal.style.display = 'block';
+};
+
+// When the close button inside the modal is clicked, hide the modal
+closeBtn.onclick = function () {
+  modal.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
+
+        const toggleMenu = document.querySelector(".toggle");
+        const navigation = document.querySelector(".nav");
+
+        toggleMenu.onclick = function(){
+            toggleMenu.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+        function redirectToBlog(index) {
+          location.href = "history.html?post=" + index;
+        }
+
+
+        function checkLoginStatus() {
+    // Retrieve the login status from localStorage
+    var loggedIn = localStorage.getItem("loggedInn");
+
+    // Return the login status
+    return loggedIn === "true";
+  }
+
+  // Function to handle button click events
+  function handleButtonClick(action) {
+    // Check login status before performing any action
+    var isLoggedIn = checkLoginStatus();
+
+    // Perform the action based on the button clicked
+    if (isLoggedIn) {
+      if (action === "participate") {
+        // Add logic for participating
+        console.log("User is participating");
+      } else if (action === "donate") {
+        // Add logic for donating
+        console.log("User is donating");
+      }
+    } else {
+      // Redirect to login page if not logged in
+      window.location.href = "loginsignup.html";
+    }
+  }
+
+  // Event listener for Participate button click
+  // Participate Button Click Event
+  document.getElementById("participateButton").addEventListener("click", function () {
+            // Check login status
+            if (localStorage.getItem("loggedInn") === "true") {
+                // User is logged in, show participation confirmation dialog
+                var confirmationModal = document.getElementById('participationConfirmationModal');
+                confirmationModal.style.display = 'block';
+
+                // You can add additional logic or details to the confirmation modal here
+            } else {
+                // User is not logged in, redirect to login.html
+                window.location.href = "loginsignup.html";
+            }
+        });
+
+
+  // Event listener for Donate button click
+  // Donation Button Click Event
+    document.getElementById("donateButton").addEventListener("click", function () {
+    // Check login status
+    if (localStorage.getItem("loggedInn") === "true") {
+        // User is logged in, redirect to donation.html
+        window.location.href = "donation.html";
+    } else {
+        // User is not logged in, redirect to login.html
+        window.location.href = "loginsignup.html";
+    }
+    });
+
+    document.getElementById("donateButton2").addEventListener("click", function () {
+    // Check login status
+    if (localStorage.getItem("loggedInn") === "true") {
+        // User is logged in, redirect to donation.html
+        window.location.href = "donation.html";
+    } else {
+        // User is not logged in, redirect to login.html
+        window.location.href = "loginsignup.html";
+    }
+    });
+
+document.getElementById("confirmButton").addEventListener("click", function () {
+            // Redirect to the participation_receipt.html page
+            window.location.href = "participationReceipt.html";
+        });
+
+        // Event listener for Cancel button click in the participation confirmation modal
+        document.getElementById("cancelButton").addEventListener("click", function () {
+            // Close the participation confirmation modal
+            var confirmationModal = document.getElementById('participationConfirmationModal');
+            confirmationModal.style.display = 'none';
+        });
+
+
+  // Check login status when the page loads
+  window.addEventListener("load", function () {
+    // Optionally, you can check the login status here on page load if needed
+    // var isLoggedInOnLoad = checkLoginStatus();
+  });
+
+  function updateClassBasedOnScreenWidth() {
+    var imageContainer = document.getElementById('imageContainer');
+
+    // Check the viewport width
+    var viewportWidth = window.innerWidth;
+
+    // Add or remove class based on the viewport width
+    if (viewportWidth <= 767) {
+      // If viewport width is less than or equal to 767, set the class for mobile view
+      imageContainer.classList.remove('col-md-4', 'order-md-2', 'text-end');
+      imageContainer.classList.add('text-center');
+    } else {
+      // If viewport width is greater than 767, set the class for larger screens
+      imageContainer.classList.remove('text-center');
+      imageContainer.classList.add('col-md-4', 'order-md-2', 'text-end');
+    }
+  }
+
+  // Call the function on page load and window resize
+  window.addEventListener('load', updateClassBasedOnScreenWidth);
+  window.addEventListener('resize', updateClassBasedOnScreenWidth);
+    </script>
+
+</body>
+</html>

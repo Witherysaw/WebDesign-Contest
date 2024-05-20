@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Home</title>
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/3a35172c8d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/gallery/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=fjIKeG"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=fjIKeG" type="text/css">
+
+  <style>
+
+.side-menu-container {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.side-menu-button {
+  font-size: 25px;
+   border-radius: 50%;
+  background-color: #3e5518;
+  color: white;
+  padding: 20px 25px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.side-menu {
+  position: absolute;
+  top: calc(100% - 250px);
+  right: 0;
+  width: 250px;
+  background-color: #3e5518;
+  color: #fff;
+  display: none;
+  padding: 20px;
+}
+
+.side-menu2 {
+  position: absolute;
+  top: calc(100% - 125px);
+  right: 0;
+  width: 250px;
+  background-color: #3e5518;
+  color: #fff;
+  display: none;
+  padding: 20px;
+}
+
+.side-menu.open {
+  display: block;
+}
+
+.side-menu2.open2 {
+  display: block;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-menu-button {
+  background-color: #3e5518;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+#login{
+  color: #d7b543;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#login:hover{
+  color: black;
+}
+    header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+
+/* header .logo {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+} */
+
+#menu-logo img{
+  width: 240px;
+  height: 90px;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+header ul li a {
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s, font-size 0.5s;
+}
+
+header ul li a:hover,
+header ul li a.active {
+  background: #d7b543;
+  color: #3e5518;
+  font-size: 20px;
+  transition: background 0.3s, color 0.3s, font-size 0.3s;
+}
+
+#menu{
+        background-color: #3e5518;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .footer {
+  background-color: #3e5518;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  color: #f0f0f0;
+}
+
+/* Icon styles */
+.footer i {
+    background-color: white;
+    color: white;
+  font-size: 24px;
+  margin: 0 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer i:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 992px) {
+
+    #menu-logo img{
+    width: 120px;
+    height: 45px;
+  }  
+/* Adjust styles for smaller screens */
+#menu{
+  position: sticky;
+  padding: 20px;
+}
+
+#menu-logo{
+  font-size: 1.5em;
+}
+
+.nav li{
+  display: none;
+}
+
+.nav.active li{
+  display: flex;
+  margin-left: 0;
+}
+
+.nav.active li a{
+  font-size: 1.2em;
+  margin: 5px 0;
+  display: inline-block;
+}
+
+.nav.active{
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.87);
+}
+
+
+.toggle{
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 35px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url(img/menu.png);
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11000;
+}
+
+.toggle.active{
+  background: url(img/close.png);
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+}
+  </style>
+  
+  
+</head>
+<body>
+    <header id="menu">
+        <a href="#" class="logo" id="menu-logo"> <img src="img/logo2.png" alt=""> </a>
+          <div class="toggle"></div>
+          <ul class="nav">
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="events.html" >Events</a></li>
+            <li><a href="aboutus.html" class="active">About Us</a></li>
+            <li id="Signuplink"></li>
+            <!-- <li><a href="login.html" class="menuitem2" id="Signuplink">Login</a></li> -->
+          </ul>
+      </header>
+  
+  <section data-bs-version="5.1" class="header5 cid-tJS6uM4N87" id="header05-1">
+	
+
+	
+	
+	<div class="topbg"></div>
+	<div class="align-center container" style="margin-top: -150px;">
+		<div class="row justify-content-center">
+			<div class="col-md-12 col-lg-9">
+				<h2 style="font-size: 3.5em;" class="mbr-section-title mbr-fonts-style mb-4 display-1"><strong>About Us</strong></h2>
+				<h2 style="font-size: 1.2em;" class="mbr-text mbr-fonts-style mb-4 display-7">Recognizing the transformative power of art in education, we are committed to integrating artistic expressions into our educational initiatives. Through the medium of art, we seek to enhance learning experiences, ignite creativity, and instill a deep appreciation for culture and expression.&nbsp;<br> But Why Us? Because We stand by and work by the <b>5 pillar of TRUST</b>.&nbsp;<br>What are those?</h2>
+				<div class="mbr-section-btn mt-3"><a class="btn btn-primary display-7" href="#TRUST">Let's See</a></div>
+			</div>
+		</div>
+		<div class="row mt-5 justify-content-center">
+			<div class="col-8 col-lg-6">
+				<img src="assets/images/screenshot-20231230-215450-2241x1008.jpeg" alt="" title="">
+			</div>
+		</div>
+	</div>
+</section>
+
+<section data-bs-version="5.1" class="features15 cid-tLek7gQhG7" id="features015-m">
+	
+
+	
+	
+	<div class="container" id="TRUST">
+		<div class="mbr-section-head mb-5">
+			<h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2" style="color: #3e5518;">
+			  <strong>TRUST</strong></h4>
+			
+		  </div>
+		<div class="row justify-content-center">
+			<div class="item features-without-image col-12 col-lg-4">
+				<div class="item-wrapper">
+					<div class="img-wrapper">
+						<img src="assets/images/T.png" alt="Mobirise Website Builder">
+					</div>
+					<div class="card-box">
+						<h4 class="card-title mbr-fonts-style mb-3 display-5">
+							<strong>Transparency</strong></h4>
+						<h5 class="card-text mbr-fonts-style display-7">
+							We provide transparent aspects of our operations. This includes that clear vision of whether your donations go directly to projects.</h5>
+					</div>
+				</div>
+			</div><div class="item features-without-image col-12 col-lg-4">
+				<div class="item-wrapper">
+					<div class="img-wrapper">
+						<img src="assets/images/R.png" alt="Mobirise Website Builder" data-slide-to="1" data-bs-slide-to="2">
+					</div>
+					<div class="card-box">
+						<h4 class="card-title mbr-fonts-style mb-3 display-5">
+							<strong>Reliability</strong></h4>
+						<h5 class="card-text mbr-fonts-style display-7">
+							Our impactful programs and effective engagement allow fulfilment not only to the donors but also to the people who would receive our help. </h5>
+					</div>
+				</div>
+			</div><div class="item features-without-image col-12 col-lg-4">
+				<div class="item-wrapper">
+					<div class="img-wrapper">
+						<img src="assets/images/U.png" alt="Mobirise Website Builder" data-slide-to="2" data-bs-slide-to="3">
+					</div>
+					<div class="card-box">
+						<h4 class="card-title mbr-fonts-style mb-3 display-5">
+							<strong>Understanding</strong></h4>
+						<h5 class="card-text mbr-fonts-style display-7">
+							Allowing the donors to see the struggle of people in the rural area and their needs.</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-lg-4">
+				<div class="item-wrapper">
+					<div class="img-wrapper">
+						<img src="assets/images/S.png" alt="Mobirise Website Builder" data-slide-to="3">
+					</div>
+					<div class="card-box">
+						<h4 class="card-title mbr-fonts-style mb-3 display-5">
+							<strong>Sincerity</strong></h4>
+						<h5 class="card-text mbr-fonts-style display-7">
+							It includes genuine care, honesty, and commitment for the well-being of those who will donate and receive our donations. <br><br></h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-lg-4">
+				<div class="item-wrapper">
+					<div class="img-wrapper">
+						<img src="assets/images/T.png" alt="Mobirise Website Builder" data-bs-slide-to="4" data-slide-to="4">
+					</div>
+					<div class="card-box">
+						<h4 class="card-title mbr-fonts-style mb-3 display-5">
+							<strong>Timely</strong></h4>
+						<h5 class="card-text mbr-fonts-style display-7">
+							With our precise information gathering and robust actions, we perform our operations timely and effectively to those where it is needed.</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section data-bs-version="5.1" class="header09 cid-tLAX5BnXkJ" id="header09-q">
+	
+	
+	<div class="container" id="#gifts">
+		<div class="row">
+			<div class="content-wrap col-12 col-md-8">
+				<h2 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1" style="font-size: 50px; color: #3e5518;"><strong>Our&nbsp;</strong><span style="font-size: 50px; color: #3e5518;"><strong>Uniqueness</strong></span></h2>
+				
+				<b><p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7" style="color: #3e5518;">We tend to give more than just a receipt. We really want to give something memorable, something to be proud of.</p></b>
+				<!-- <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="https://mobiri.se">Learn more</a></div> -->
+                <img src="img/gittshori.png" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+
+<section data-bs-version="5.1" class="gallery1 mbr-gallery cid-tMlDYtQ5fF" id="gallery02-v">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h4 class="mbr-section-title mbr-fonts-style align-center m-0 display-2" style="color: #3e5518;" ><strong>Time Capsule</strong></h4>
+                </div>
+            </div>
+        </div>
+        <div class="row mbr-gallery mbr-masonry" data-masonry="{&quot;percentPosition&quot;: true }">
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#u2mBzRiWBY-modal" data-bs-target="#u2mBzRiWBY-modal">
+                    <img class="w-100" src="assets/images/mbr-512x384.jpg" alt="Mobirise Website Builder" data-slide-to="0" data-bs-slide-to="0" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#u2mBzRiWBY-modal" data-bs-target="#u2mBzRiWBY-modal">
+                    <img class="w-100" src="assets/images/mbr-512x322.jpg" alt="Mobirise Website Builder" data-slide-to="1" data-bs-slide-to="1" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#u2mBzRiWBY-modal" data-bs-target="#u2mBzRiWBY-modal">
+                    <img class="w-100" src="assets/images/student.jpg" alt="Mobirise Website Builder" data-slide-to="2" data-bs-slide-to="2" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#u2mBzRiWBY-modal" data-bs-target="#u2mBzRiWBY-modal">
+                    <img class="w-100" src="assets/images/mbr-1-512x384.jpg" alt="Mobirise Website Builder" data-slide-to="5" data-bs-slide-to="5" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="modal mbr-slider" tabindex="-1" role="dialog" aria-hidden="true" id="u2mBzRiWBY-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="carousel slide" id="lb-u2mBzRiWBY" data-interval="5000" data-bs-interval="5000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="assets/images/mbr-512x384.jpg" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/mbr-512x322.jpg" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/gallery10.jpg" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/mbr-1-512x384.jpg" alt="Mobirise Website Builder">
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators">
+                                <li data-slide-to="0" data-bs-slide-to="0" class="active" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY"></li>
+                                <li data-slide-to="1" data-bs-slide-to="1" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY"></li>
+                                <li data-slide-to="2" data-bs-slide-to="2" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY"></li>
+                                <li data-slide-to="3" data-bs-slide-to="3" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY"></li>
+                                <li data-slide-to="4" data-bs-slide-to="4" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY"></li>
+                                <li data-slide-to="5" data-bs-slide-to="5" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY"></li>
+                                <li data-slide-to="6" data-bs-slide-to="6" data-target="#lb-u2mBzRiWBY" data-bs-target="#lb-u2mBzRiWBY"></li>
+                            </ol>
+                            <a role="button" href="" class="close" data-dismiss="modal" data-bs-dismiss="modal" aria-label="Close">
+                            </a>
+                            <a class="carousel-control-prev carousel-control" role="button" data-slide="prev" data-bs-slide="prev" href="#lb-u2mBzRiWBY">
+                                <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
+                                <span class="sr-only visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next carousel-control" role="button" data-slide="next" data-bs-slide="next" href="#lb-u2mBzRiWBY">
+                                <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
+                                <span class="sr-only visually-hidden">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="side-menu-container" id="sidemenu">
+    <!-- <button class="side-menu-button" onclick="toggleSideMenu2()"><i class="fas fa-user"></i></button> -->
+    <!-- <div class="side-menu2">
+      <a href="loginsignup.html" ><button class="close-menu-button" id="loginButton" onclick="handleLogin()">Login</button></a>
+      <button class="close-menu-button" onclick="toggleSideMenu2()">Close Menu</button>
+    </div> -->
+  </div>
+
+
+<footer style="background-color: #3e5518; color: #fff; padding: 20px; text-align: center;">
+    <p>© Copyright 2024 Educate - All Rights Reserved</p>
+    <div class="social-icons" style="margin-top: 10px;">
+        <a href="#" target="_blank" style="color: #fff; text-decoration: none; margin: 0 10px;">
+            <i class="fab fa-facebook" style="font-size: 24px; transition: transform 0.3s ease-in-out;"></i>
+        </a>
+        <a href="#" target="_blank" style="color: #fff; text-decoration: none; margin: 0 10px;">
+            <i class="fab fa-instagram" style="font-size: 24px; transition: transform 0.3s ease-in-out;"></i>
+        </a>
+        <a href="#" target="_blank" style="color: #fff; text-decoration: none; margin: 0 10px;">
+            <i class="fab fa-viber" style="font-size: 24px; transition: transform 0.3s ease-in-out;"></i>
+        </a>
+    </div>
+</footer>
+
+
+
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>
